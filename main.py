@@ -1,6 +1,6 @@
 import os
 import httpx
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, BackgroundTasks
 from pydantic import BaseModel
 from dotenv import load_dotenv
 
@@ -24,7 +24,7 @@ async def health_check():
     return {"status": "healthy", "message": "The Distributed AI Gateway is running."}
 
 @app.post("/chat")
-async def chat_proxy(request: chatRequest):
+async def chat_proxy(request: chatRequest, background_tasks: BackgroundTasks):
     """
     The main proxy endpoint that intercepts prompts and applies semantic caching.
     """
@@ -61,8 +61,8 @@ async def chat_proxy(request: chatRequest):
             
             data = response.json()
             ai_text = data["choices"][0]["message"]["content"]
-
-            cache.insert(request.prompt, ai_text)
+            
+            background_tasks.add_task(cache.insert, request.prompt, ai_text)
 
             return {
                 "gateway_status": "success",
