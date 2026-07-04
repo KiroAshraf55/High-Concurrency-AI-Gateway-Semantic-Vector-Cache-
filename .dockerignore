@@ -1,0 +1,14 @@
+# Ignore virtual environments
+.venv/
+venv/
+env/
+
+# Ignore Python cache folders
+__pycache__/
+*.pyc
+
+# CRITICAL: Ignore environment variables
+.env
+
+# Ignore git history
+.git/
