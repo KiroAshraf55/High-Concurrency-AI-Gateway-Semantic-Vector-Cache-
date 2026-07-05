@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    image: ai-gateway
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - gateway_data:/app/cache_storage
+
+volumes:
+  gateway_data:
+
+# docker compose up --build
