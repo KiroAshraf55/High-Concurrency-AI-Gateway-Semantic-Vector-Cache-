@@ -13,7 +13,7 @@ An enterprise-grade, containerized AI routing gateway that intercepts LLM reques
 
 <br />
 
-*(Replace this text with your UI screenshot! For example: `<img src="./docs/ui-screenshot.png" width="800" />`)*
+<img src="./docs/UI_chat.png" width="800" />`)
 
 </div>
 
@@ -86,6 +86,7 @@ async def decontextualize_prompt(messages_payload: list[dict], client: httpx.Asy
     return latest_user_message
 ```
 ## 💻 Code Showcase: The Decontextualizer
+```
 ai-gateway-cache/
 ├── backend/                  # Containerized Python Engine
 │   ├── gateway_v3.py         # Main FastAPI entry point
@@ -101,6 +102,7 @@ ai-gateway-cache/
     │   └── services/         # API Routing to Gateway
     ├── package.json
     └── vite.config.js
+```
 
 ## 🛠️ Quick Start (Local Development)
 ### Prerequisites
