@@ -3,6 +3,6 @@ uvicorn
 pydantic
 httpx
 python-dotenv
-faiss-cpu
+qdrant-client
 sentence-transformers
 numpy

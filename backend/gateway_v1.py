@@ -30,8 +30,6 @@ What it is: The Asynchronous Delivery Driver.
 
 What it does in our code: As we discussed, this is the tool that packages up your prompt, drives out of your computer, travels across the internet to GROQ's servers, waits for the model to generate a response, and brings the text back—all while allowing your FastAPI server to keep helping other users. '''
 
-from semantic_cache import SemanticCache
-
 # load the secret keys from .env file into memory
 load_dotenv()
 

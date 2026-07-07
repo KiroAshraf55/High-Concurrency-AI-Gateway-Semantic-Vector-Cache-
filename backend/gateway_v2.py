@@ -13,7 +13,7 @@ if not api_key:
 
 app = FastAPI(title="Distributed AI Gateway & Semantic Cache")
 
-cache = SemanticCache(threshold=0.8, max_size=1000, storage_dir="cache_storage")
+cache = SemanticCache(threshold=0.91, max_size=1000)
 
 class chatRequest(BaseModel):
     prompt: str
